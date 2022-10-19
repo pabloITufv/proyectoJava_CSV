@@ -35,7 +35,7 @@ public class LectorCSV {
              * Voy a leer una fila del archivo, y si consigo leerla, es que todavía hay filas, por eso while
              */
             while((fila = csvReader.readNext()) != null){
-
+                System.out.printf(fila[0] + " | ");
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
