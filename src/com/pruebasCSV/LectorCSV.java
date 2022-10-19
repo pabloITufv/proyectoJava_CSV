@@ -2,6 +2,7 @@ package com.pruebasCSV;
 
 import com.opencsv.CSVReader;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 /*
@@ -23,6 +24,10 @@ public class LectorCSV {
          * csvReader es el nombre nuevo.
          * = new CSVReader ... es que el nombreArchivo se pasa a FileReader.
          */
-        CSVReader csvReader = new CSVReader(new FileReader(nombreArchivo))
+        try {
+            CSVReader csvReader = new CSVReader(new FileReader(nombreArchivo))
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
