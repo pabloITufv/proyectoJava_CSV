@@ -39,6 +39,7 @@ public class LectorCSV {
                 + fila[1] + " | "
                 + fila[2] + " | ");
             }
+            csvReader.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
