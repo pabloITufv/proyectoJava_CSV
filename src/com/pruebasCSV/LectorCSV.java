@@ -31,7 +31,13 @@ public class LectorCSV {
              * Array de string que guarda cada linea (lee y guarda).
              */
             String[] fila;
-        } catch (FileNotFoundException e) {
+            /**
+             * Voy a leer una fila del archivo, y si consigo leerla, es que todavía hay filas, por eso while
+             */
+            while((fila = csvReader.readNext()) != null){
+
+            }
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
