@@ -4,6 +4,7 @@ import com.opencsv.CSVReader;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.sql.SQLOutput;
 
 /*
 Esta clase se encarga de leer el archivo .csv que se le pase por parametro.
@@ -15,19 +16,23 @@ public class LectorCSV {
      */
 
     public void leeCSV(String nombreArchivo){
-        /**
-         * Para poder leer el fichero CSV,
-         * CSVReader es una utilidad que dan los de OPENCSV
-         * Lo que estamos haciendo es crear un objeto en java
-         * Explicado:
-         * CSVReader es la clase de OPENCSV.
-         * csvReader es el nombre nuevo.
-         * = new CSVReader ... es que el nombreArchivo se pasa a FileReader.
-         */
         try {
-            CSVReader csvReader = new CSVReader(new FileReader(nombreArchivo))
+            /**
+             * Para poder leer el fichero CSV,
+             * CSVReader es una utilidad que dan los de OPENCSV
+             * Lo que estamos haciendo es crear un objeto en java
+             * Explicado:
+             * CSVReader es la clase de OPENCSV.
+             * csvReader es el nombre nuevo.
+             * = new CSVReader ... es que el nombreArchivo se pasa a FileReader.
+             */
+            CSVReader csvReader = new CSVReader(new FileReader(nombreArchivo));
+            /**
+             * Array de string que guarda cada linea (lee y guarda).
+             */
+            String[] fila;
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println(e.getMessage());
         }
     }
 }
